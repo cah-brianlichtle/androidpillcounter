@@ -1,0 +1,2 @@
+/Users/brian.lichtle/AndroidStudioProjects/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/classes/debug
+/Users/brian.lichtle/AndroidStudioProjects/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/pre-dexed/debug/classes-1c7ee3accd0b1d23835e91fbb5973024680a26d2.jar

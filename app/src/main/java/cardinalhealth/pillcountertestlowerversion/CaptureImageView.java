@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.view.View;
 
 public class CaptureImageView extends ActionBarActivity {
 
+    final String TAG = "Capture Image View";
     private static int REQUEST_IMAGE_CAPTURE = 1;
 
     public void launchImageCapture(View myView){
@@ -21,6 +23,7 @@ public class CaptureImageView extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "On Create");
         setContentView(R.layout.activity_capture_image_view);
     }
 
@@ -29,6 +32,7 @@ public class CaptureImageView extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_capture_image_view, menu);
+        Log.i(TAG, "On Create Options Menu");
         return true;
     }
 
