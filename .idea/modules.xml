@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PillCounterTestLowerVersion.iml" filepath="$PROJECT_DIR$/PillCounterTestLowerVersion.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/opencv2/opencv2.iml" filepath="$PROJECT_DIR$/opencv2/opencv2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openCVLibrary2410/openCVLibrary2410.iml" filepath="$PROJECT_DIR$/openCVLibrary2410/openCVLibrary2410.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openCVSamplecolorblobdetection/openCVSamplecolorblobdetection.iml" filepath="$PROJECT_DIR$/openCVSamplecolorblobdetection/openCVSamplecolorblobdetection.iml" />
     </modules>
   </component>
 </project>
