@@ -8,5 +8,12 @@
         sha1="68f268fad8ae798445de7fddf7bf530f411db264">
         <dex dex="/Users/brian.lichtle/AndroidStudioProjects/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/pre-dexed/debug/classes-1c7ee3accd0b1d23835e91fbb5973024680a26d2.jar" />
     </item>
+    <item
+        jar="/Users/brian.lichtle/AndroidStudioProjects/PillCounterTestLowerVersion/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/exploded-aar/color-blob-detection/openCVLibrary2410/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="04a1e9324799505b48bea7bcbb08e29db8a74bbb">
+        <dex dex="/Users/brian.lichtle/AndroidStudioProjects/PillCounterTestLowerVersion/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/pre-dexed/debug/classes-1f601f59c2b4ee451c4c8182e17b7d70f22773bb.jar" />
+    </item>
 
 </items>
