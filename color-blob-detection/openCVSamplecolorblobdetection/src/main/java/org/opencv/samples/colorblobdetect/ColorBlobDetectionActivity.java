@@ -103,9 +103,22 @@ public class ColorBlobDetectionActivity extends Activity implements OnTouchListe
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
         mRgba = inputFrame.rgba();
 
-        Integer count = processImage(mRgba);
-        Log.i(TAG, "PILL COUNT: " + count.toString());
+        Integer currentCount = processImage(mRgba);
+        updateCountTextOnScreen(currentCount);
+
         return mRgba;
+    }
+
+    public void updateCountTextOnScreen(Integer currentCount){
+        final String count = currentCount.toString();
+        final TextView textView = (TextView) findViewById(R.id.countText);
+
+        (this).runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                textView.setText("Current Count: " + count);
+            }
+        });
     }
 
 
@@ -141,7 +154,7 @@ public class ColorBlobDetectionActivity extends Activity implements OnTouchListe
 
             return currentCount;
         } catch (Exception e) {
-            //Log.e(TAG, "Error processing pill image", e);
+            Log.e(TAG, "Error processing pill image", e);
             return 0;
         }
     }

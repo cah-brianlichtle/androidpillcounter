@@ -70,15 +70,17 @@
       <file leaf-file-name="ColorBlobDetectionActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/openCVSamplecolorblobdetection/src/main/java/org/opencv/samples/colorblobdetect/ColorBlobDetectionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3604651" vertical-offset="1764" max-vertical-offset="2280">
-              <caret line="132" column="43" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.59302324" vertical-offset="519" max-vertical-offset="2475">
+              <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3017#3018#0" expanded="true" />
                 <element signature="e#3048#3049#0" expanded="true" />
-                <element signature="e#4062#4074#0" expanded="true" />
-                <element signature="e#4420#4602#0" expanded="true" />
-                <element signature="e#4587#4588#0" expanded="true" />
+                <element signature="e#3624#3779#0" expanded="true" />
+                <element signature="e#3768#3769#0" expanded="true" />
+                <element signature="e#4449#4461#0" expanded="true" />
+                <element signature="e#4807#4989#0" expanded="true" />
+                <element signature="e#4974#4975#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1477,9 +1479,11 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3017#3018#0" expanded="true" />
             <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#4062#4074#0" expanded="true" />
-            <element signature="e#4420#4602#0" expanded="true" />
-            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#3624#3779#0" expanded="true" />
+            <element signature="e#3768#3769#0" expanded="true" />
+            <element signature="e#4449#4461#0" expanded="true" />
+            <element signature="e#4807#4989#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1535,9 +1539,11 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3017#3018#0" expanded="true" />
             <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#4062#4074#0" expanded="true" />
-            <element signature="e#4420#4602#0" expanded="true" />
-            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#3624#3779#0" expanded="true" />
+            <element signature="e#3768#3769#0" expanded="true" />
+            <element signature="e#4449#4461#0" expanded="true" />
+            <element signature="e#4807#4989#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1593,9 +1599,11 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3017#3018#0" expanded="true" />
             <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#4062#4074#0" expanded="true" />
-            <element signature="e#4420#4602#0" expanded="true" />
-            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#3624#3779#0" expanded="true" />
+            <element signature="e#3768#3769#0" expanded="true" />
+            <element signature="e#4449#4461#0" expanded="true" />
+            <element signature="e#4807#4989#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1651,9 +1659,11 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3017#3018#0" expanded="true" />
             <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#4062#4074#0" expanded="true" />
-            <element signature="e#4420#4602#0" expanded="true" />
-            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#3624#3779#0" expanded="true" />
+            <element signature="e#3768#3769#0" expanded="true" />
+            <element signature="e#4449#4461#0" expanded="true" />
+            <element signature="e#4807#4989#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1693,9 +1703,11 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3017#3018#0" expanded="true" />
             <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#4062#4074#0" expanded="true" />
-            <element signature="e#4420#4602#0" expanded="true" />
-            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#3624#3779#0" expanded="true" />
+            <element signature="e#3768#3769#0" expanded="true" />
+            <element signature="e#4449#4461#0" expanded="true" />
+            <element signature="e#4807#4989#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1734,9 +1746,11 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3017#3018#0" expanded="true" />
             <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#4062#4074#0" expanded="true" />
-            <element signature="e#4420#4602#0" expanded="true" />
-            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#3624#3779#0" expanded="true" />
+            <element signature="e#3768#3769#0" expanded="true" />
+            <element signature="e#4449#4461#0" expanded="true" />
+            <element signature="e#4807#4989#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1764,9 +1778,11 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3017#3018#0" expanded="true" />
             <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#4062#4074#0" expanded="true" />
-            <element signature="e#4420#4602#0" expanded="true" />
-            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#3624#3779#0" expanded="true" />
+            <element signature="e#3768#3769#0" expanded="true" />
+            <element signature="e#4449#4461#0" expanded="true" />
+            <element signature="e#4807#4989#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1875,15 +1891,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/openCVSamplecolorblobdetection/src/main/java/org/opencv/samples/colorblobdetect/ColorBlobDetectionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3604651" vertical-offset="1764" max-vertical-offset="2280">
-          <caret line="132" column="43" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.59302324" vertical-offset="519" max-vertical-offset="2475">
+          <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3017#3018#0" expanded="true" />
             <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#4062#4074#0" expanded="true" />
-            <element signature="e#4420#4602#0" expanded="true" />
-            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#3624#3779#0" expanded="true" />
+            <element signature="e#3768#3769#0" expanded="true" />
+            <element signature="e#4449#4461#0" expanded="true" />
+            <element signature="e#4807#4989#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
           </folding>
         </state>
       </provider>
