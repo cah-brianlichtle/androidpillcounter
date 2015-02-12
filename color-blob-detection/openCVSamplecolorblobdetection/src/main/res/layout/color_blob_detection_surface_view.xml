@@ -5,11 +5,6 @@
     android:orientation="vertical"
     android:weightSum="2">
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="fill_parent"-->
-        <!--android:layout_weight="1">-->
-
         <org.opencv.android.JavaCameraView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -17,13 +12,6 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_weight="1"/>
-
-        <!--</LinearLayout>-->
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_weight="1">-->
 
         <TextView
             android:layout_width="fill_parent"
@@ -35,10 +23,4 @@
             android:layout_alignParentLeft="true"
             android:layout_weight="1"
              />
-
-    <!--</LinearLayout>-->
-
-
-
-
 </LinearLayout>
