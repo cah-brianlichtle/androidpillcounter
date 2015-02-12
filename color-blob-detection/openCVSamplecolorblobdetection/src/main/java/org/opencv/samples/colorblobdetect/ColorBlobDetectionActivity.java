@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnTouchListener;
+import android.widget.TextView;
 
 public class ColorBlobDetectionActivity extends Activity implements OnTouchListener, CvCameraViewListener2 {
     private static final String  TAG              = "OCVSample::Activity";
@@ -104,7 +105,6 @@ public class ColorBlobDetectionActivity extends Activity implements OnTouchListe
 
         Integer count = processImage(mRgba);
         Log.i(TAG, "PILL COUNT: " + count.toString());
-
         return mRgba;
     }
 
@@ -129,11 +129,17 @@ public class ColorBlobDetectionActivity extends Activity implements OnTouchListe
             Imgproc.findContours(dist8u, contours, hierarchy, Imgproc.RETR_EXTERNAL,
                     Imgproc.CHAIN_APPROX_SIMPLE);
 
-            int ncomp = contours.size();
+            final int currentCount = contours.size();
+            final TextView textView = (TextView) findViewById(R.id.countText);
 
-            Log.i("Count", "" + ncomp);
+            (this).runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    textView.setText("Current Count: " + currentCount);
+                }
+            });
 
-            return ncomp;
+            return currentCount;
         } catch (Exception e) {
             //Log.e(TAG, "Error processing pill image", e);
             return 0;
