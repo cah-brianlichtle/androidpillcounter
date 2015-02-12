@@ -47,9 +47,8 @@ public class ColorBlobDetectionActivity extends Activity implements OnTouchListe
             switch (status) {
                 case LoaderCallbackInterface.SUCCESS:
                 {
-                    Log.i(TAG, "OpenCV loaded successfully");
                     mOpenCvCameraView.enableView();
-                    mOpenCvCameraView.setOnTouchListener(ColorBlobDetectionActivity.this);
+                    //mOpenCvCameraView.setOnTouchListener(ColorBlobDetectionActivity.this);
                 } break;
                 default:
                 {
@@ -195,13 +194,6 @@ public class ColorBlobDetectionActivity extends Activity implements OnTouchListe
 
     private int processImage(Mat imageBmp) {
         try {
-//            Bitmap imageBmp;
-//
-//            File imgFile = new File(imageThumbPath);
-//            imageBmp = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-//;
-            //mImg = new Mat();
-            //   Utils.bitmapToMat(imageBmp, mImg);
             Mat threeChannel = new Mat();
             Imgproc.cvtColor(imageBmp, threeChannel, Imgproc.COLOR_BGR2GRAY);
 
