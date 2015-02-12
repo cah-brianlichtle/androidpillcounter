@@ -121,14 +121,12 @@ public class ColorBlobDetectionActivity extends Activity implements OnTouchListe
         });
     }
 
-
     private int processImage(Mat imageBmp) {
         try {
             Mat threeChannel = new Mat();
-            Imgproc.cvtColor(imageBmp, threeChannel, Imgproc.COLOR_BGR2GRAY);
 
-            Imgproc.threshold(threeChannel, threeChannel, 220, 255,
-                    Imgproc.THRESH_BINARY);
+            Imgproc.cvtColor(imageBmp, threeChannel, Imgproc.COLOR_BGR2GRAY);
+            Imgproc.threshold(threeChannel, threeChannel, 220, 255, Imgproc.THRESH_BINARY);
 
             Mat dist = new Mat();
             Imgproc.distanceTransform(threeChannel, dist, Imgproc.CV_DIST_L2, 3);
