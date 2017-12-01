@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/merged/androidTest/debug/values/values.xml",
+            "map": []
+        },
+        {
+            "outputFile": "/Users/brian.lichtle/Documents/projects/androidpillcounter/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+            "map": []
+        },
+        {
+            "outputFile": "/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+            "map": []
+        },
+        {
+            "outputFile": "/Users/brian.lichtle/Documents/projects/androidpillcounter/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/merged/androidTest/debug/values/values.xml",
+            "map": []
+        }
+    ]
+}

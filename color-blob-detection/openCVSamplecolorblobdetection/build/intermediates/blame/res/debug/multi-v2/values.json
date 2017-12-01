@@ -1,0 +1,92 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "304",
+                        "endColumns": "58",
+                        "endOffsets": "358"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/brian.lichtle/Documents/projects/androidpillcounter/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/brian.lichtle/Documents/projects/androidpillcounter/color-blob-detection/openCVSamplecolorblobdetection/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "304",
+                        "endColumns": "58",
+                        "endOffsets": "358"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/merged/debug/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "304",
+                        "endColumns": "58",
+                        "endOffsets": "358"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/brian.lichtle/Documents/projects/androidpillcounter/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/merged/debug/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/brian.lichtle/Documents/projects/androidpillcounter/color-blob-detection/openCVSamplecolorblobdetection/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "304",
+                        "endColumns": "58",
+                        "endOffsets": "358"
+                    }
+                }
+            ]
+        }
+    ]
+}

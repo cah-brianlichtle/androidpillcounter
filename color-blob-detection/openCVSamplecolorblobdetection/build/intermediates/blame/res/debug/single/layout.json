@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/merged/debug/layout/color_blob_detection_surface_view.xml",
+        "source": "/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/src/main/res/layout/color_blob_detection_surface_view.xml"
+    },
+    {
+        "merged": "/Users/brian.lichtle/Documents/projects/androidpillcounter/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/merged/debug/layout/color_blob_detection_surface_view.xml",
+        "source": "/Users/brian.lichtle/Documents/projects/androidpillcounter/color-blob-detection/openCVSamplecolorblobdetection/src/main/res/layout/color_blob_detection_surface_view.xml"
+    }
+]

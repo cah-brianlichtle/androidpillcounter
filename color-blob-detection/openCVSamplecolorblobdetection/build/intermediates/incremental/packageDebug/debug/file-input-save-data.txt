@@ -1,0 +1,18 @@
+#Internal package file, do not edit.
+#Fri Dec 01 14:51:02 EST 2017
+1.base=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/debug/resources-debug.ap_
+4.file=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/debug/resources-debug.ap_/resources.arsc
+1.file=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/debug/resources-debug.ap_/res/layout/color_blob_detection_surface_view.xml
+4.set=ANDROID_RESOURCE
+2.base=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/debug/resources-debug.ap_
+3.set=DEX
+2.set=ANDROID_RESOURCE
+2.file=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/debug/resources-debug.ap_/res/drawable/icon.png
+count=5
+1.set=ANDROID_RESOURCE
+3.base=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/transforms/dexMerger/debug/18
+0.set=ANDROID_RESOURCE
+0.base=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/debug/resources-debug.ap_
+3.file=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/transforms/dexMerger/debug/18/classes.dex
+0.file=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/debug/resources-debug.ap_/AndroidManifest.xml
+4.base=/Users/brian.lichtle/Documents/projects/androidpillcounter2/color-blob-detection/openCVSamplecolorblobdetection/build/intermediates/res/debug/resources-debug.ap_
