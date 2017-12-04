@@ -18,11 +18,13 @@ import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
 import org.opencv.core.MatOfPoint;
+import org.opencv.core.MatOfPoint2f;
+import org.opencv.core.Point;
+import org.opencv.core.Rect;
+import org.opencv.core.Scalar;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -131,6 +133,8 @@ public class ColorBlobDetectionActivity extends Activity implements View.OnTouch
             Imgproc.findContours(dist8u, contours, hierarchy, Imgproc.RETR_EXTERNAL,
                 Imgproc.CHAIN_APPROX_SIMPLE);
 
+            drawBoundingBoxOnContours(contours, imageBmp);
+
             return contours.size();
 
         } catch (Exception e) {
@@ -153,5 +157,33 @@ public class ColorBlobDetectionActivity extends Activity implements View.OnTouch
                 imageView.setImageBitmap(mutableBitmap);
             }
         });
+    }
+
+    private void drawBoundingBoxOnContours(List<MatOfPoint> contours, Mat imageBmp) {
+        MatOfPoint2f         approxCurve = new MatOfPoint2f();
+
+        for (int i=0; i<contours.size(); i++)
+        {
+            //Convert contours(i) from MatOfPoint to MatOfPoint2f
+            MatOfPoint2f contour2f = new MatOfPoint2f( contours.get(i).toArray() );
+            //Processing on mMOP2f1 which is in type MatOfPoint2f
+            double approxDistance = Imgproc.arcLength(contour2f, true)*0.02;
+            Imgproc.approxPolyDP(contour2f, approxCurve, approxDistance, true);
+
+            //Convert back to MatOfPoint
+            MatOfPoint points = new MatOfPoint( approxCurve.toArray() );
+
+            // Get bounding rect of contour
+            Rect rect = Imgproc.boundingRect(points);
+
+            // draw enclosing rectangle (all same color, but you could use variable i to make them unique)
+            Imgproc.rectangle(imageBmp,
+                new Point(rect.x,rect.y),
+                new Point(rect.x+rect.width,rect.y+rect.height),
+                new Scalar(255, 0, 0),
+                3);
+
+
+        }
     }
 }
