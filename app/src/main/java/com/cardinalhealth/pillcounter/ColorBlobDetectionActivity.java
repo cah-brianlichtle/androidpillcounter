@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
@@ -120,17 +121,21 @@ public class ColorBlobDetectionActivity extends Activity implements View.OnTouch
             Imgproc.threshold(gray, thresh, 220, 255, Imgproc.THRESH_BINARY);
             preview(thresh, R.id.filter_image_view2);
 
-            Mat dist = new Mat();
-            Imgproc.distanceTransform(gray, dist, Imgproc.CV_DIST_L2, 3);
-            Imgproc.threshold(dist, dist, 0.5, 1.0, Imgproc.THRESH_BINARY);
+            Mat canny = new Mat();
+            Imgproc.Canny(thresh, canny, 100, 255);
+            preview(canny, R.id.filter_image_view3);
 
-            Mat dist8u = new Mat();
-            dist.convertTo(dist8u, CvType.CV_8U);
+//            Mat dist = new Mat();
+//            Imgproc.distanceTransform(gray, dist, Imgproc.CV_DIST_L2, 3);
+//            Imgproc.threshold(dist, dist, 0.5, 1.0, Imgproc.THRESH_BINARY);
+//
+//            Mat dist8u = new Mat();
+//            dist.convertTo(dist8u, CvType.CV_8U);
 
             // Find total markers
             List<MatOfPoint> contours = new ArrayList<MatOfPoint>();
             Mat hierarchy = new Mat();
-            Imgproc.findContours(dist8u, contours, hierarchy, Imgproc.RETR_EXTERNAL,
+            Imgproc.findContours(canny, contours, hierarchy, Imgproc.RETR_EXTERNAL,
                 Imgproc.CHAIN_APPROX_SIMPLE);
 
             drawBoundingBoxOnContours(contours, imageBmp);
