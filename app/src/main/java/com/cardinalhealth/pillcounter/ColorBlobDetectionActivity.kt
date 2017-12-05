@@ -95,16 +95,15 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
             cvtColor(imageBmp!!, gray, COLOR_BGR2GRAY)
             preview(gray, R.id.filter_image_view1)
 
-            val thresh = Mat()
-            threshold(gray, thresh, 220.0, 255.0, THRESH_BINARY or THRESH_OTSU)
-            preview(thresh, R.id.filter_image_view2)
-
             val dist = Mat()
             distanceTransform(gray, dist, CV_DIST_L2, 3)
-            threshold(dist, dist, 0.5, 1.0, THRESH_BINARY or THRESH_OTSU)
+
+            val thresh = Mat()
+            threshold(dist, thresh, 0.5, 1.0, THRESH_BINARY)
+            preview(thresh, R.id.filter_image_view2)
 
             val dist8u = Mat()
-            dist.convertTo(dist8u, CvType.CV_8U)
+            thresh.convertTo(dist8u, CvType.CV_8U)
 
             // Find total markers
             val contours = ArrayList<MatOfPoint>()
