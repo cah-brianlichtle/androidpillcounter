@@ -97,18 +97,22 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
 
             val dist = Mat()
             distanceTransform(gray, dist, CV_DIST_L2, 3)
+            gray.release()
 
             val thresh = Mat()
             threshold(dist, thresh, 0.5, 1.0, THRESH_BINARY)
+            dist.release()
             preview(thresh, R.id.filter_image_view2)
 
             val dist8u = Mat()
             thresh.convertTo(dist8u, CvType.CV_8U)
+            thresh.release()
 
             // Find total markers
             val contours = ArrayList<MatOfPoint>()
             val hierarchy = Mat()
             findContours(dist8u, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE)
+            dist8u.release()
 
             drawBoundingBoxOnContours(contours, imageBmp)
             var count = 0
