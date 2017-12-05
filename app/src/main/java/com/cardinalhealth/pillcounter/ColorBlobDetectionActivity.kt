@@ -22,7 +22,6 @@ import org.opencv.core.MatOfPoint2f
 import org.opencv.core.Point
 import org.opencv.core.Scalar
 import org.opencv.imgcodecs.Imgcodecs
-import org.opencv.imgproc.Imgproc
 import org.opencv.imgproc.Imgproc.*
 
 import java.util.ArrayList
@@ -30,6 +29,7 @@ import java.util.ArrayList
 class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridgeViewBase.CvCameraViewListener2 {
     private lateinit var mRgba: Mat
     private lateinit var mOpenCvCameraView: CameraBridgeViewBase
+    private var minAreaThreshold = 100
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,8 +111,15 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
             findContours(dist8u, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE)
 
             drawBoundingBoxOnContours(contours, imageBmp)
+            var count = 0
 
-            return contours.size
+            for (i in contours.indices) {
+                if (contourArea(contours[i]) > minAreaThreshold) {
+                    count = count.plus(1)
+                }
+            }
+
+            return count
         } catch (e: Exception) {
             Log.e(TAG, "Error processing pill image", e)
             return 0
@@ -136,24 +143,26 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
         val approxCurve = MatOfPoint2f()
 
         for (i in contours.indices) {
-            //Convert contours(i) from MatOfPoint to MatOfPoint2f
-            val contour2f = MatOfPoint2f(*contours[i].toArray())
-            //Processing on mMOP2f1 which is in type MatOfPoint2f
-            val approxDistance = arcLength(contour2f, true) * 0.02
-            approxPolyDP(contour2f, approxCurve, approxDistance, true)
+            if (contourArea(contours[i]) > 100) {
+                //Convert contours(i) from MatOfPoint to MatOfPoint2f
+                val contour2f = MatOfPoint2f(*contours[i].toArray())
+                //Processing on mMOP2f1 which is in type MatOfPoint2f
+                val approxDistance = arcLength(contour2f, true) * 0.02
+                approxPolyDP(contour2f, approxCurve, approxDistance, true)
 
-            //Convert back to MatOfPoint
-            val points = MatOfPoint(*approxCurve.toArray())
+                //Convert back to MatOfPoint
+                val points = MatOfPoint(*approxCurve.toArray())
 
-            // Get bounding rect of contour
-            val rect = boundingRect(points)
+                // Get bounding rect of contour
+                val rect = boundingRect(points)
 
-            // draw enclosing rectangle (all same color, but you could use variable i to make them unique)
-            rectangle(imageBmp,
-                    Point(rect.x.toDouble(), rect.y.toDouble()),
-                    Point((rect.x + rect.width).toDouble(), (rect.y + rect.height).toDouble()),
-                    Scalar(255.0, 0.0, 0.0),
-                    3)
+                // draw enclosing rectangle (all same color, but you could use variable i to make them unique)
+                rectangle(imageBmp,
+                        Point(rect.x.toDouble(), rect.y.toDouble()),
+                        Point((rect.x + rect.width).toDouble(), (rect.y + rect.height).toDouble()),
+                        Scalar(255.0, 0.0, 0.0),
+                        3)
+            }
         }
     }
 
