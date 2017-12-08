@@ -14,13 +14,7 @@ import android.widget.TextView
 
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.OpenCVLoader
-import org.opencv.core.CvType
-import org.opencv.core.Mat
-import org.opencv.core.MatOfByte
-import org.opencv.core.MatOfPoint
-import org.opencv.core.MatOfPoint2f
-import org.opencv.core.Point
-import org.opencv.core.Scalar
+import org.opencv.core.*
 import org.opencv.imgcodecs.Imgcodecs
 import org.opencv.imgproc.Imgproc.*
 
@@ -87,15 +81,18 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
         runOnUiThread { textView.text = getString(R.string.current_pill_count, currentCount.toString()) }
     }
 
-    private fun processImage(imageBmp: Mat): Int {
+    private fun processImage(image: Mat): Int {
         return try {
-            val gray = getGrayScaleImage(imageBmp)
-            val dist = getDistanceTransformationImage(gray)
-            val thresh = getThresholdImage(dist)
-            val dist8u = getDist8UImage(thresh)
+            val gray = getGrayScaleImage(image)
+            val binary = getBinaryImage(gray)
+            val clean = removeNoise(binary)
+            var foreground = findForeground(clean)
+//            val dist = getDistanceTransformationImage(gray)
+//            val thresh = getThresholdImage(dist)
+            val dist8u = getDist8UImage(foreground)
             val contours = findContours(dist8u)
 
-            drawBoundingBoxOnContours(contours, imageBmp)
+            drawBoundingBoxOnContours(contours, image)
 
             getContourCount(contours)
         } catch (e: Exception) {
@@ -130,6 +127,44 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
         return dist8u
     }
 
+    private fun getGrayScaleImage(image: Mat): Mat {
+        val gray = Mat()
+        cvtColor(image, gray, COLOR_BGR2GRAY)
+        preview(gray, R.id.filter_image_view1)
+        return gray
+    }
+
+    private fun getBinaryImage(image: Mat): Mat {
+        val binary = Mat()
+//        threshold(image, binary, 0.0, 255.0, THRESH_BINARY_INV + THRESH_OTSU)
+        threshold(image, binary, 150.0, 255.0, THRESH_BINARY)
+        image.release()
+        preview(binary, R.id.filter_image_view2)
+        return binary
+    }
+
+    private fun removeNoise(image: Mat): Mat {
+        val kernel = Mat.ones(8, 8, CvType.CV_8U)
+        val opening = Mat()
+        morphologyEx(image, opening, MORPH_OPEN, kernel, Point(-1.0, -1.0),2)
+        preview(opening, R.id.filter_image_view3)
+        image.release()
+        return opening
+    }
+
+    private fun findForeground(image: Mat): Mat {
+        val dist = Mat()
+        val foreground = Mat()
+        distanceTransform(image, dist, CV_DIST_L2, 3)
+        preview(dist, R.id.filter_image_view4)
+        val minMax = Core.minMaxLoc(dist)
+        println("max dist="+minMax.maxVal)
+        threshold(dist, foreground,  0.7 * minMax.maxVal, 255.0, THRESH_BINARY)
+        preview(foreground, R.id.filter_image_view5)
+        dist.release()
+        return foreground
+    }
+
     private fun getThresholdImage(dist: Mat): Mat {
         val thresh = Mat()
         threshold(dist, thresh, 0.5, 1.0, THRESH_BINARY)
@@ -143,13 +178,6 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
         distanceTransform(gray, dist, CV_DIST_L2, 3)
         gray.release()
         return dist
-    }
-
-    private fun getGrayScaleImage(imageBmp: Mat?): Mat {
-        val gray = Mat()
-        cvtColor(imageBmp!!, gray, COLOR_BGR2GRAY)
-        preview(gray, R.id.filter_image_view1)
-        return gray
     }
 
     private fun preview(mat: Mat, imageViewId: Int) {
@@ -169,7 +197,7 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
         val approxCurve = MatOfPoint2f()
 
         for (i in contours.indices) {
-            if (contourArea(contours[i]) > 100) {
+//            if (contourArea(contours[i]) > 100) {
                 //Convert contours(i) from MatOfPoint to MatOfPoint2f
                 val contour2f = MatOfPoint2f(*contours[i].toArray())
                 //Processing on mMOP2f1 which is in type MatOfPoint2f
@@ -188,7 +216,7 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
                         Point((rect.x + rect.width).toDouble(), (rect.y + rect.height).toDouble()),
                         Scalar(255.0, 0.0, 0.0),
                         3)
-            }
+//            }
         }
     }
 
