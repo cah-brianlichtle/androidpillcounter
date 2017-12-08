@@ -136,8 +136,8 @@ class ColorBlobDetectionActivity : Activity(), View.OnTouchListener, CameraBridg
 
     private fun getBinaryImage(image: Mat): Mat {
         val binary = Mat()
-//        threshold(image, binary, 0.0, 255.0, THRESH_BINARY_INV + THRESH_OTSU)
-        threshold(image, binary, 150.0, 255.0, THRESH_BINARY)
+        blur(image, image, Size(5.0,5.0), Point(-1.0, -1.0))
+        threshold(image, binary, 0.0, 255.0, THRESH_BINARY + THRESH_OTSU)
         image.release()
         preview(binary, R.id.filter_image_view2)
         return binary
